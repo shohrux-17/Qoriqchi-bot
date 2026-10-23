@@ -191,3 +191,11 @@ bot.on('message', async (msg) => {
 });
 
 console.log("Qoʻriqchi boti muvaffaqiyatli ishga tushdi!");
+const http = require('http');
+const port = process.env.PORT || 3000;
+http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Bot ishlamoqda!\n');
+}).listen(port, () => {
+  console.log(`Server port ${port} da tinglanmoqda`);
+});
